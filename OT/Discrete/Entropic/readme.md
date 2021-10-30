@@ -2,7 +2,7 @@ This directory contains few of my implementations of Sinkhorn iterations for dis
 
 I have implemented a variant of sinhorn iterations for entropic regularized discrete optimal transport problem from [1] as given in [2]. 
 Sinkhorn iterations are simultaneouly efficient and numerically unstable, which is the hallmark of interior point methods. 
-I am interested in combining or entirely replacing trajectory based approach of interor-point with dynamically stable maps, which are usually numerically tractable. 
+I am interested in combining or entirely replacing trajectory based approach of interior-point with dynamically stable maps, which are usually numerically tractable. 
 In that line, I found an interesting paper [3], which can be combined with mirror-descent based approach given in [4], for categorical distributions.
 
 
