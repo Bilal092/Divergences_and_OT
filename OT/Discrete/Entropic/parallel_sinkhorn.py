@@ -42,10 +42,10 @@ def parallel_sinkhorn(MU, NU, M, gamma, max_iter=10000, conv_eval_iter = 10, tol
     for step in range(max_iter):
         Alpha_prev = Alpha.copy()
         # Alpha update: shape (N, m)
-        Alpha = - neg_gamma_log_MU + gamma * logsumexp(-(Beta[:, None, :] + M[None, :, :]) / gamma, axis=2)
+        Alpha = neg_gamma_log_MU + gamma * logsumexp(-(Beta[:, None, :] + M[None, :, :]) / gamma, axis=2)
 
         # Beta update: shape (N, n)
-        Beta = - neg_gamma_log_NU + gamma * logsumexp(-(Alpha[:, :, None] + M[None, :, :]) / gamma, axis=1)
+        Beta = neg_gamma_log_NU + gamma * logsumexp(-(Alpha[:, :, None] + M[None, :, :]) / gamma, axis=1)
         
         if eval_costs:
             # Compute costs for convergence evaluation
