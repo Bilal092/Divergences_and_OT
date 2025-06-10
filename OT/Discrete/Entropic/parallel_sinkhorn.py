@@ -40,7 +40,7 @@ def parallel_sinkhorn(MU, NU, M, gamma, max_iter=10000, conv_eval_iter = 10, tol
         dual_costs = []
 
     for step in range(max_iter):
-
+        Alpha_prev = Alpha.copy()
         # Alpha update: shape (N, m)
         Alpha = - neg_gamma_log_MU + gamma * logsumexp(-(Beta[:, None, :] + M[None, :, :]) / gamma, axis=2)
 
